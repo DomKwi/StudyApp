@@ -7,18 +7,21 @@
 
 import SwiftUI
 
-struct SliderContoler: View {
+struct SliderModelView: View {
     @State var progress = 0.33
     let ringDiamater = 300.0
+    @State var rotationAngle = Angle(degrees: 120)
     
-    @State var loc = CGPoint(x: 0, y: 0)
-    
-    private var rotationAngle: Angle {
-        return Angle(degrees: (360.0 * progress))
-    }
-    
-    private func changeAngel(location: CGPoint) {
-        loc = location
+    private func changeAngel(location: CGPoint) -> Angle {
+        let vector = CGVector(dx: location.x, dy: -location.y)
+        
+        let angleRadians = atan2(vector.dx, vector.dy)
+        
+        let positiveAngles = angleRadians < 0.0 ? angleRadians + (2.0 * .pi) : angleRadians
+        
+        progress = positiveAngles / (2.0 * .pi)
+        
+        return Angle(radians:  positiveAngles)
     }
     
     var body: some View {
@@ -31,7 +34,7 @@ struct SliderContoler: View {
                     Circle()
                         .stroke(Color(hue: 0.0, saturation: 0.0, brightness: 0.9), lineWidth: 20.0)
                         .overlay() {
-                            Text("\(progress, specifier: "%.1f")")
+                            Text("\(progress, specifier: "%.2f")")
                                 .font(.system(size: 78, weight: .bold, design: .rounded))
                         }
                     Circle()
@@ -48,17 +51,11 @@ struct SliderContoler: View {
                         .gesture(
                             DragGesture(minimumDistance: 0.0)
                                 .onChanged() { value in
-                                    changeAngel(location: value.location)
+                                    rotationAngle = changeAngel(location: value.location)
                                 }
                             )
                 }
                 .frame(width: ringDiamater, height: ringDiamater)
-                
-                Spacer().frame(height: 50)
-                
-                Text("Location = (\(loc.x, specifier: "%.1f"), \(loc.y, specifier: "%.1f"))")
-                
-                .padding(.vertical, 40)
                 
                 Spacer()
             }
@@ -68,8 +65,8 @@ struct SliderContoler: View {
     }
 }
 
-struct SliderContoler_Previews: PreviewProvider {
+struct SliderModelView_Previews: PreviewProvider {
     static var previews: some View {
-        SliderContoler()
+        SliderModelView()
     }
 }
