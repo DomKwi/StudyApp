@@ -11,15 +11,21 @@ struct SliderContoler: View {
     @State var progress = 0.33
     let ringDiamater = 300.0
     
+    @State var loc = CGPoint(x: 0, y: 0)
+    
     private var rotationAngle: Angle {
         return Angle(degrees: (360.0 * progress))
+    }
+    
+    private func changeAngel(location: CGPoint) {
+        loc = location
     }
     
     var body: some View {
         ZStack {
             Color(hue: 0.58, saturation: 0.04, brightness: 1.0)
-                .edgesIgnoringSafeArea(.all
-                )
+                .edgesIgnoringSafeArea(.all)
+            
             VStack {
                 ZStack {
                     Circle()
@@ -39,17 +45,19 @@ struct SliderContoler: View {
                         .frame(width: 21, height: 21)
                         .offset(y: -ringDiamater / 2.0)
                         .rotationEffect(rotationAngle)
+                        .gesture(
+                            DragGesture(minimumDistance: 0.0)
+                                .onChanged() { value in
+                                    changeAngel(location: value.location)
+                                }
+                            )
                 }
                 .frame(width: ringDiamater, height: ringDiamater)
                 
-                VStack {
-                    Text("Progress: \(progress, specifier: "%.1f")")
-                    Slider(value: $progress,
-                           in:  0...1,
-                           minimumValueLabel: Text("0.0"),
-                           maximumValueLabel: Text("1.0")
-                    ) {}
-                }
+                Spacer().frame(height: 50)
+                
+                Text("Location = (\(loc.x, specifier: "%.1f"), \(loc.y, specifier: "%.1f"))")
+                
                 .padding(.vertical, 40)
                 
                 Spacer()
