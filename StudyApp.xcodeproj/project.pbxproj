@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4012FB82982F5FB0048F9CC /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4012FB72982F5FB0048F9CC /* SliderView.swift */; };
 		B45AEF7D29802BBB00A87C5E /* StudyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45AEF7C29802BBB00A87C5E /* StudyAppApp.swift */; };
 		B45AEF7F29802BBB00A87C5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45AEF7E29802BBB00A87C5E /* ContentView.swift */; };
 		B45AEF8129802BBF00A87C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45AEF8029802BBF00A87C5E /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4012FB72982F5FB0048F9CC /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		B45AEF7929802BBB00A87C5E /* StudyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45AEF7C29802BBB00A87C5E /* StudyAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyAppApp.swift; sourceTree = "<group>"; };
 		B45AEF7E29802BBB00A87C5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4012FB92982F65A0048F9CC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B45AEF8A298030AF00A87C5E /* SliderModelView.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B4012FBA2982F6680048F9CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4012FBB2982F67A0048F9CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B45AEF7E29802BBB00A87C5E /* ContentView.swift */,
+				B4012FB72982F5FB0048F9CC /* SliderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B45AEF7029802BBB00A87C5E = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				B45AEF7C29802BBB00A87C5E /* StudyAppApp.swift */,
-				B45AEF7E29802BBB00A87C5E /* ContentView.swift */,
-				B45AEF8A298030AF00A87C5E /* SliderModelView.swift */,
+				B4012FBB2982F67A0048F9CC /* View */,
+				B4012FB92982F65A0048F9CC /* ViewModel */,
+				B4012FBA2982F6680048F9CC /* Model */,
 				B45AEF8029802BBF00A87C5E /* Assets.xcassets */,
 				B45AEF8229802BBF00A87C5E /* Preview Content */,
 			);
@@ -141,6 +168,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B45AEF8B298030AF00A87C5E /* SliderModelView.swift in Sources */,
+				B4012FB82982F5FB0048F9CC /* SliderView.swift in Sources */,
 				B45AEF7F29802BBB00A87C5E /* ContentView.swift in Sources */,
 				B45AEF7D29802BBB00A87C5E /* StudyAppApp.swift in Sources */,
 			);
