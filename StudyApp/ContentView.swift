@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var progress1 = 0.75
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack {
+            Color(hue: 0.58, saturation: 0.06, brightness: 1.0)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack{
+                SliderModelView(value: $progress1, in: 5...120)
+                    .frame(width: 250, height: 250)
+            }
         }
-        .padding()
     }
 }
 

@@ -8,65 +8,88 @@
 import SwiftUI
 
 struct SliderModelView: View {
-    @State var progress = 0.33
-    let ringDiamater = 300.0
-    @State var rotationAngle = Angle(degrees: 120)
+    @Binding var progress: Double
+    @State private var rotationAngle = Angle(degrees: 0)
     
-    private func changeAngel(location: CGPoint) -> Angle {
+    private var minValue = 0.0
+    private var maxValue = 1.0
+    
+    init(value progress: Binding<Double>, in bounds: ClosedRange<Int> = 0...1) {
+        self._progress = progress
+        
+        self.minValue = Double(bounds.first ?? 0)
+        self.maxValue = Double(bounds.last ?? 1)
+        self.rotationAngle = Angle(degrees: progressFraction * 360.0)
+    }
+    
+    private var progressFraction: Double {
+        return ((progress - minValue) / (maxValue - minValue))
+    }
+    
+    
+    private func changeAngel(location: CGPoint) {
         let vector = CGVector(dx: location.x, dy: -location.y)
         
         let angleRadians = atan2(vector.dx, vector.dy)
         
         let positiveAngles = angleRadians < 0.0 ? angleRadians + (2.0 * .pi) : angleRadians
         
-        progress = positiveAngles / (2.0 * .pi)
+        progress = ((positiveAngles / (2.0 * .pi)) * (maxValue - minValue)) + minValue
         
-        return Angle(radians:  positiveAngles)
+        rotationAngle = Angle(radians: positiveAngles)
+        
     }
     
     var body: some View {
-        ZStack {
-            Color(hue: 0.58, saturation: 0.04, brightness: 1.0)
-                .edgesIgnoringSafeArea(.all)
+        GeometryReader { gr in
+            let radius = (min(gr.size.width, gr.size.height) / 2.0 ) * 0.9
+            let sliderWidth = radius * 0.1
             
-            VStack {
+            VStack(spacing: 0) {
                 ZStack {
                     Circle()
-                        .stroke(Color(hue: 0.0, saturation: 0.0, brightness: 0.9), lineWidth: 20.0)
+                        .stroke(Color(hue: 0.0, saturation: 0.0, brightness: 0.9),
+                                style: StrokeStyle(lineWidth: sliderWidth))
                         .overlay() {
-                            Text("\(progress, specifier: "%.2f")")
-                                .font(.system(size: 78, weight: .bold, design: .rounded))
+                            Text("\(progress, specifier: "%.0f")")
+                                .font(.system(size: radius * 0.7, weight: .bold, design: .rounded))
                         }
                     Circle()
-                        .trim(from: 0, to: progress)
+                        .trim(from: 0, to: progressFraction)
                         .stroke(Color(hue: 0.0, saturation: 0.5, brightness: 0.9),
-                                style: StrokeStyle(lineWidth: 20.0, lineCap: .round)
+                                style: StrokeStyle(lineWidth: sliderWidth, lineCap: .round)
                         )
                         .rotationEffect(Angle(degrees: -90))
                     Circle()
-                        .fill(Color.white)
-                        .frame(width: 21, height: 21)
-                        .offset(y: -ringDiamater / 2.0)
+                        .fill()
+                        .shadow(radius: (sliderWidth * 0.3))
+                        .frame(width: sliderWidth, height: sliderWidth)
+                        .offset(y: -radius)
                         .rotationEffect(rotationAngle)
                         .gesture(
                             DragGesture(minimumDistance: 0.0)
                                 .onChanged() { value in
-                                    rotationAngle = changeAngel(location: value.location)
+                                    changeAngel(location: value.location)
                                 }
-                            )
+                        )
                 }
-                .frame(width: ringDiamater, height: ringDiamater)
-                
-                Spacer()
+                .frame(width: radius * 2.0, height: radius * 2.0, alignment: .center)
+                .padding(radius * 0.1)
             }
-            .padding(.vertical, 40)
-            .padding()
+            .onAppear {
+                self.rotationAngle = Angle(degrees: progressFraction * 360.0)
+            }
         }
     }
 }
-
-struct SliderModelView_Previews: PreviewProvider {
-    static var previews: some View {
-        SliderModelView()
+                
+            
+    
+    struct SliderModelView_Previews: PreviewProvider {
+        @State var progress1 = 0.75
+        static var previews: some View {
+            
+            SliderModelView(value: .constant(8), in: 0...100)
+        }
     }
-}
+
