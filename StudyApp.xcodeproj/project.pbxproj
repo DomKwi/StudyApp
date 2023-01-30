@@ -13,6 +13,7 @@
 		B45AEF8129802BBF00A87C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45AEF8029802BBF00A87C5E /* Assets.xcassets */; };
 		B45AEF8429802BBF00A87C5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45AEF8329802BBF00A87C5E /* Preview Assets.xcassets */; };
 		B45AEF8B298030AF00A87C5E /* SliderModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45AEF8A298030AF00A87C5E /* SliderModelView.swift */; };
+		B45CAB6E298835B800D79DD2 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45CAB6D298835B800D79DD2 /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		B45AEF8029802BBF00A87C5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B45AEF8329802BBF00A87C5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B45AEF8A298030AF00A87C5E /* SliderModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderModelView.swift; sourceTree = "<group>"; };
+		B45CAB6D298835B800D79DD2 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				B45AEF7C29802BBB00A87C5E /* StudyAppApp.swift */,
+				B45CAB6C2988357B00D79DD2 /* Extensions */,
 				B4012FBB2982F67A0048F9CC /* View */,
 				B4012FB92982F65A0048F9CC /* ViewModel */,
 				B4012FBA2982F6680048F9CC /* Model */,
@@ -95,6 +98,14 @@
 				B45AEF8329802BBF00A87C5E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B45CAB6C2988357B00D79DD2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B45CAB6D298835B800D79DD2 /* Timer.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +181,7 @@
 				B45AEF8B298030AF00A87C5E /* SliderModelView.swift in Sources */,
 				B4012FB82982F5FB0048F9CC /* SliderView.swift in Sources */,
 				B45AEF7F29802BBB00A87C5E /* ContentView.swift in Sources */,
+				B45CAB6E298835B800D79DD2 /* Timer.swift in Sources */,
 				B45AEF7D29802BBB00A87C5E /* StudyAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
