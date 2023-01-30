@@ -22,9 +22,17 @@ extension SliderView {
         private var endDate = Date()
         
         func startTimer(minutes: Float) -> () {
-            self.initialTime = Int(minutes)
+            self.initTime = Int(minutes)
             self.endDate = Date()
             self.isActive = true
+            self.endDate = Calendar.current.date(byAdding: .minute, value: Int(minutes), to: endDate)!
+        }
+        
+        func reset() {
+         
+            self.minutes = Float(initTime)
+            self.isActive = false
+            self.time = "\(Int(minutes)):00"
             
         }
     }
