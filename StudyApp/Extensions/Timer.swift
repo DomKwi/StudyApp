@@ -17,5 +17,15 @@ extension SliderView {
                 self.time = "\(Int(minutes)):00"
             }
         }
+        
+        private var initTime = 0
+        private var endDate = Date()
+        
+        func startTimer(minutes: Float) -> () {
+            self.initialTime = Int(minutes)
+            self.endDate = Date()
+            self.isActive = true
+            
+        }
     }
 }
