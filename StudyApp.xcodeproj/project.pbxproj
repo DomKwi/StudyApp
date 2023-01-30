@@ -11,11 +11,6 @@
 		B45AEF7F29802BBB00A87C5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45AEF7E29802BBB00A87C5E /* ContentView.swift */; };
 		B45AEF8129802BBF00A87C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45AEF8029802BBF00A87C5E /* Assets.xcassets */; };
 		B45AEF8429802BBF00A87C5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45AEF8329802BBF00A87C5E /* Preview Assets.xcassets */; };
-<<<<<<< Updated upstream
-=======
-		B45AEF8B298030AF00A87C5E /* SliderModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45AEF8A298030AF00A87C5E /* SliderModelView.swift */; };
-		B4F466D72988330800FBED42 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F466D62988330800FBED42 /* Timer.swift */; };
->>>>>>> Stashed changes
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,11 +19,6 @@
 		B45AEF7E29802BBB00A87C5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B45AEF8029802BBF00A87C5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B45AEF8329802BBF00A87C5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
-=======
-		B45AEF8A298030AF00A87C5E /* SliderModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderModelView.swift; sourceTree = "<group>"; };
-		B4F466D62988330800FBED42 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
->>>>>>> Stashed changes
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,14 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				B45AEF7C29802BBB00A87C5E /* StudyAppApp.swift */,
-<<<<<<< Updated upstream
 				B45AEF7E29802BBB00A87C5E /* ContentView.swift */,
-=======
-				B4012FBB2982F67A0048F9CC /* View */,
-				B4012FB92982F65A0048F9CC /* ViewModel */,
-				B4012FBA2982F6680048F9CC /* Model */,
-				B4F466D529882F1D00FBED42 /* extensions */,
->>>>>>> Stashed changes
 				B45AEF8029802BBF00A87C5E /* Assets.xcassets */,
 				B45AEF8229802BBF00A87C5E /* Preview Content */,
 			);
@@ -82,14 +65,6 @@
 				B45AEF8329802BBF00A87C5E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		B4F466D529882F1D00FBED42 /* extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B4F466D62988330800FBED42 /* Timer.swift */,
-			);
-			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B45AEF7F29802BBB00A87C5E /* ContentView.swift in Sources */,
-				B4F466D72988330800FBED42 /* Timer.swift in Sources */,
 				B45AEF7D29802BBB00A87C5E /* StudyAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
