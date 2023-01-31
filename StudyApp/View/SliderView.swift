@@ -32,7 +32,7 @@ struct SliderView: View {
                     .disabled(vm.isActive)
                     
                     Text("\(vm.time)")
-                        .alert("you made it", isPresented: $vm.showingAlert) {
+                        .alert("You made IT", isPresented: $vm.showingAlert) {
                             Button("Continue", role: .cancel) {
                                 
                             }
