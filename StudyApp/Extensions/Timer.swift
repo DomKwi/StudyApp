@@ -59,7 +59,7 @@ extension SliderView {
             let seconds = calendar.component(.second, from: date)
             
             self.minutes = Float(minutes)
-            self.time = String(format: "%d:%.2f", minutes, seconds)
+            self.time = String(format: "%d:%02d", minutes, seconds)
         }
     }
 }
