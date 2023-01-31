@@ -86,7 +86,6 @@ struct SliderModelView: View {
             
     
     struct SliderModelView_Previews: PreviewProvider {
-        @State var progress1 = 0.75
         static var previews: some View {
             
             SliderModelView(value: .constant(6), in: 0...100)

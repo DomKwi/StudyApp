@@ -21,13 +21,18 @@ struct SliderView: View {
             
             
             VStack{
-                SliderModelView(value: $time, in: 5...120)
+                SliderModelView(value: $time, in: 5...60)
                     .frame(width: 250, height: 250)
                 
                 HStack {
                     Button("Start") {
-                        vm.minutes = Float(time)
-                        vm.startTimer(minutes: vm.minutes)
+                        if time > 59.9 {
+                            vm.minutes = Float(time) + 1
+                            vm.startTimer(minutes: vm.minutes)
+                        } else {
+                            vm.minutes = Float(time)
+                            vm.startTimer(minutes: vm.minutes)
+                        }
                     }
                     .disabled(vm.isActive)
                     
