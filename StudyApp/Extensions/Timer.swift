@@ -11,8 +11,8 @@ extension SliderView {
     final class ViewModel: ObservableObject {
         @Published var isActive = false
         @Published var showingAlert = false
-        @Published var time: String = "5:00"
-        @Published var minutes: Float = 5.0 {
+        @Published var time: String = "15:00"
+        @Published var minutes: Float = 15.0 {
             didSet {
                 self.time = "\(Int(minutes)):00"
             }
@@ -59,7 +59,7 @@ extension SliderView {
             let seconds = calendar.component(.second, from: date)
             
             self.minutes = Float(minutes)
-            self.time = String(format: "%d:%.2f", minutes, seconds)
+            self.time = String(format: "%d:%02d", minutes, seconds)
         }
     }
 }
