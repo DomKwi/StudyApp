@@ -14,6 +14,7 @@
 		B45AEF8429802BBF00A87C5E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B45AEF8329802BBF00A87C5E /* Preview Assets.xcassets */; };
 		B45AEF8B298030AF00A87C5E /* SliderModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45AEF8A298030AF00A87C5E /* SliderModelView.swift */; };
 		B45CAB6E298835B800D79DD2 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45CAB6D298835B800D79DD2 /* Timer.swift */; };
+		B48C934F298A8B6D001BA967 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48C934E298A8B6D001BA967 /* Notification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B45AEF8329802BBF00A87C5E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B45AEF8A298030AF00A87C5E /* SliderModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderModelView.swift; sourceTree = "<group>"; };
 		B45CAB6D298835B800D79DD2 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		B48C934E298A8B6D001BA967 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 		B4012FBA2982F6680048F9CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B48C934E298A8B6D001BA967 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			files = (
 				B45AEF8B298030AF00A87C5E /* SliderModelView.swift in Sources */,
 				B4012FB82982F5FB0048F9CC /* SliderView.swift in Sources */,
+				B48C934F298A8B6D001BA967 /* Notification.swift in Sources */,
 				B45AEF7F29802BBB00A87C5E /* ContentView.swift in Sources */,
 				B45CAB6E298835B800D79DD2 /* Timer.swift in Sources */,
 				B45AEF7D29802BBB00A87C5E /* StudyAppApp.swift in Sources */,

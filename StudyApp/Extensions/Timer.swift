@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 extension SliderView {
     final class ViewModel: ObservableObject {
