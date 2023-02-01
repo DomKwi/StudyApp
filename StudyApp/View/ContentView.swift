@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("ALERT_KEY") var notificationAlert = true
+    
     var body: some View {
-        SliderView()
+        if notificationAlert == false {
+            SliderView()
+        } else {
+            SliderView()
+                .alert(isPresented: $notificationAlert) {
+                    Alert(
+                        title: Text("Notification"),
+                        message: Text("Do you want to receive notifications from our app"),
+                        primaryButton: .default(
+                            Text("Accept"),
+                            action: {
+                                notificationAlert = false
+                            }
+                        ),
+                        secondaryButton: .cancel()
+                    )
+                }
+        }
     }
 }
 
