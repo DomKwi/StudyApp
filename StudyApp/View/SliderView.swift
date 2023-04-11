@@ -22,12 +22,18 @@ struct SliderView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 HStack{
+                    Spacer()
+                        .padding(.top)
                     Button {
                         print("clicked")
                     } label: {
                         Image(systemName: "gear")
+                            .font(.system(size: 20))
                     }
+                    .padding(.trailing, 10.0)
+    
                 }
+                Spacer()
                 
                 VStack{
                     SliderModelView(value: $time, in: 5...60)
@@ -56,6 +62,7 @@ struct SliderView: View {
                             .tint(.red)
                     }
                 }
+                Spacer()
             }
             .onReceive(timer) { _ in
                 vm.countDown()
