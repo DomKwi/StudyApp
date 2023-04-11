@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SliderView: View {
-    @State var time = 1.0
+    @State var time = 15.0
     @StateObject private var vm = ViewModel()
     let notify = NotificationManager()
     
