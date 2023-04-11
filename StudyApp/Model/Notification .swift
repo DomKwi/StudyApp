@@ -15,14 +15,19 @@ class NotificationManager {
                 print("access granted!")
             } else if let error = error {
                 print(error.localizedDescription)
+                print("clicked")
+                
             }
         }
     }
     
-    func sendNotification(date: Date, type: String, timeInterval: Double = 10, title:String, body: String) {
+    func sendNotification(date: Date, type: String, timeInterval: Double = 10, title: String, body: String) {
         var trigger: UNNotificationTrigger?
         
-        if type == "time" {
+        if type == "date" {
+            let dateComponents = Calendar.current.dateComponents([.minute], from: date)
+            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        } else if type == "time" {
             trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         }
         

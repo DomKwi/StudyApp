@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct SliderView: View {
-    @State var time = 15.0
+    @State var time = 1.0
     @StateObject private var vm = ViewModel()
-    @State private var selectedDate = Date()
     let notify = NotificationManager()
     
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -26,12 +25,13 @@ struct SliderView: View {
                         .padding(.top)
                     Button {
                         print("clicked")
+                        notify.askPermission()
                     } label: {
                         Image(systemName: "gear")
                             .font(.system(size: 20))
                     }
                     .padding(.trailing, 10.0)
-    
+                    
                 }
                 Spacer()
                 
@@ -48,6 +48,13 @@ struct SliderView: View {
                                 vm.minutes = Float(time)
                                 vm.startTimer(minutes: vm.minutes)
                             }
+                            let myInterval: Double = time * 60
+                            notify.sendNotification(
+                                date: Date(),
+                                type: "time",
+                                timeInterval: myInterval,
+                                title: "Hay end your focus",
+                                body: "bravo you have completed your focus time")
                         }
                         .disabled(vm.isActive)
                         
